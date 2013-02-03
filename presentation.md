@@ -1,4 +1,4 @@
-Discussion of Reader Literals in Clojure
+Reader Literals in Clojure
 =========================
 
 Austin Clojure Meetup
@@ -33,11 +33,8 @@ Reader Literals
 Reader Literals
 ==========
 
-```clojure
-
-   #foo/bar form
-   #foo/bar [1 2 3]
-```
+    #foo/bar form
+    #foo/bar [1 2 3]
 
 * magic sequence that the reader will map to a function and invoke
   * namespaced with slash
@@ -49,22 +46,13 @@ Reader Literals
 Reader Literals (cont'd)
 --------------------
 
-```clojure
-
-   #foo/bar [1 2 3]
-   
-   #nascan/file "archives/2012/myblog.zip"
-   
-   #nascan/file { :path "archives/2012/myblog.zip" 
-   
-                          :size 12345678
-						  
-                          :scantime  223048}
-						  
-   #nas.File {...} ;; note no slash! while a reader literal, 
-   
-                        ;; used by Clojure for objects and classes.
-```
+    #foo/bar [1 2 3]
+    #nascan/file "archives/2012/myblog.zip"
+    #nascan/file { :path "archives/2012/myblog.zip"  
+                           :size 12345678
+                           :scantime  223048}
+    #nas.File {...} ;; note no slash! while a reader literal, 
+                         ;; used by Clojure for objects and classes.
 
 
 !
@@ -101,8 +89,9 @@ parts, it would look like EDN.
 
 Default Data Readers
 ===============
-   user=> default-data-readers
-   {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
+
+    user=> default-data-readers
+    {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
 
 !
 
