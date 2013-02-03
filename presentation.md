@@ -25,21 +25,33 @@ Reader Literals
 ==========
 
 ```
-   #foo/bar [1 2 3]
-   #nascan/file "archives/2012/myblog.zip"
-   #nascan/file { :path "archives/2012/myblog.zip" 
-                          :size 12345678
-                          :scantime  223048}
-   #nas.File {...} ;; note no slash! while a reader literal, 
-                        ;; used by Clojure for objects and classes.
+#foo/bar form
+#foo/bar [1 2 3]
 ```
 
 * magic sequence that the reader will map to a function and invoke
-  * namespaced
+  * namespaced with slash
   * root space reserved for Clojure
 * reader will pass next form to that function
 * allows extension of reader without allowing change of the language
    * contrasts with other LISP's reader extensions, which could change semantics
+
+! 
+
+Reader Literals (cont'd)
+--------------------
+
+```
+#foo/bar [1 2 3]
+
+#nascan/file "archives/2012/myblog.zip"
+#nascan/file { :path "archives/2012/myblog.zip" 
+                       :size 12345678
+                       :scantime  223048}
+#nas.File {...} ;; note no slash! while a reader literal, 
+                     ;; used by Clojure for objects and classes.
+```
+
 
 !
 
@@ -53,7 +65,7 @@ we can use it to operate with other systems or map to other
 implementations in a different context. 
 
 The reader literals also mean we can change the function that the
-reader will will call with the next form.
+reader will call with the next form.
 
 The date-time instance is a good example of both.
 
