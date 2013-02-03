@@ -3,8 +3,56 @@ Discussion of Reader Literals in Clojure
 
 Austin Clojure Meetup
 
-Steve Suehs
+Monday, February 4th, 2013
 
+Hosted by Capital Factory
+
+Presenter: Steve Suehs  
+
+The Reader
+========
+* Parses stream -> Data
+
+which also gives us
+
+* Parses stream -> Code
+
+Reader Literals
+==========
+
+   #foo/bar [1 2 3]
+   #nascan/file "archives/2012/myblog.zip"
+   #nascan/file { :path "archives/2012/myblog.zip" 
+                          :size 12345678
+                          :scantime  223048}
+
+* magic sequence that the reader will map to a function to invoke
+  * namespaced
+  * root space reserved for Clojure
+* reader will pass next form to that function
+* allows extension of reader without allowing change of the language
+   * contrasts with other LISP's reader extensions, which could change semantics
+
+Why?
+====
+S expressions are so powerful, why not use functions?
+
+The difference is subtle but important.  With the reader literals we can
+represent a data object and not rely on executable code, which means
+we can use it to operate with other systems or map to other
+implementations in a different context. 
+
+The reader literals also mean we can change the function that the
+reader will will call with the next form.
+
+The date-time instance is a good example of both.
+
+Reader Literals has roots in EDN
+======================
+
+
+Research Links
+==========
 
 * www.infoq.com/interviews/hickey-clojure-reader
 * http://clojure.org/reader
@@ -18,3 +66,8 @@ Steve Suehs
    * 
 
 
+
+Presentation Tools
+=============
+* https://github.com/chrishulbert/MarkdownPresenter
+* 
