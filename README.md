@@ -26,7 +26,7 @@ Reader Literals
                           :size 12345678
                           :scantime  223048}
 
-* magic sequence that the reader will map to a function to invoke
+* magic sequence that the reader will map to a function and invoke
   * namespaced
   * root space reserved for Clojure
 * reader will pass next form to that function
@@ -49,6 +49,27 @@ The date-time instance is a good example of both.
 
 Reader Literals has roots in EDN
 ======================
+or maybe the other way around.
+
+* EDN = Extensible Data Notation
+* Used by Clojure and Datomic
+* Intended to be used by other languages
+* Looks like it is extracted from Clojure
+
+If you took the programming out of Clojure and just left the data
+parts, it would look like EDN.
+
+Default Data Readers
+===============
+   user=> default-data-readers
+   {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
+
+Let us Code
+=========
+
+This Presentation in Github
+===================
+   origin	git@github.com:skelter/reader-literals.git (fetch)
 
 
 Research Links
