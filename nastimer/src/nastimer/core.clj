@@ -1,6 +1,6 @@
 (ns nastimer.core)
 
-(defrecord NasFile [path size])
+(defrecord NasFile [path size moddate])
 
 (defn directory? [file]
   (.isDirectory file))
@@ -9,7 +9,7 @@
   (not (.isDirectory file)))
 
 (defn nasfile [file]
-     (NasFile. (.getPath file) (.length file)))
+     (NasFile. (.getPath file) (.length file) (java.util.Date. (.lastModified file))))
 
 (defn build-nasfiles
   "Return a sequence of NasFiles from a given directory, expecting a java.io.File ."
