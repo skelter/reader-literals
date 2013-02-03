@@ -65,7 +65,7 @@ we can use it to operate with other systems or map to other
 implementations in a different context. 
 
 The reader literals also mean we can change the function that the
-reader will will call with the next form.
+reader will call with the next form.
 
 The date-time instance is a good example of both.
 
