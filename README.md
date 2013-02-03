@@ -92,6 +92,19 @@ so I played around with literals
 
 !
 
+Possible Pitfalls
+===========
+
+Clojure searches for data_readers.clj at the "root of the classpath".
+
+I suspect this will be perilous, but time will tell.
+
+Counter examples:
+
+* hibernate configuration pain
+* memcache configuration pain
+* singletons not 
+
 This Presentation on Github
 ===================
 ```
