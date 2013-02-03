@@ -20,11 +20,13 @@ which also gives us
 Reader Literals
 ==========
 
+```
    #foo/bar [1 2 3]
    #nascan/file "archives/2012/myblog.zip"
    #nascan/file { :path "archives/2012/myblog.zip" 
                           :size 12345678
                           :scantime  223048}
+```
 
 * magic sequence that the reader will map to a function and invoke
   * namespaced
@@ -91,4 +93,4 @@ Research Links
 Presentation Tools
 =============
 * https://github.com/chrishulbert/MarkdownPresenter
-* 
+
