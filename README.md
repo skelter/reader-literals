@@ -105,6 +105,8 @@ Counter examples:
 * memcache configuration pain
 * singletons not 
 
+Worth digging into the reader internals and proposing a solution.
+
 This Presentation on Github
 ===================
 ```
