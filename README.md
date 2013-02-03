@@ -100,7 +100,11 @@ nastimer example
 I was having a problem with a disk usage program and my home NAS
 so I played around with literals.
 
-* If the data_readers.clj exists, it must have at least an empty map,
+* two parts to example.  The nastimer has a method to write records
+  with reader literals to a text file.
+*  The second part can read that text file but interprets with its own
+   code.
+* Owch: If the data_readers.clj exists, it must have at least an empty map,
   or reader will fail, and repl may not start.
 
 
