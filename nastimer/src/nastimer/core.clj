@@ -30,6 +30,15 @@
   (with-open [r (java.io.PushbackReader. (java.io.FileReader. inputfilename))]
     (doall (take-while identity (repeatedly (fn [] (read r false nil)))))))
 
+(defn save-nasfiles-interop
+  "Save a list of nasfiles to a text file."
+  [nasfiles outputfile]
+  (binding [*out* (java.io.FileWriter. outputfile)]
+    (doall
+     (for [nf nasfiles]
+       (do (print "#nasfile/file")
+	   (prn { :path (:path nf) :size  (:size nf) :moddate (:moddate nf) }) )))))
+
        
 (defn scan
   "Returns a sequence of NasFiles as read from rootToScan."
