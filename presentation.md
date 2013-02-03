@@ -92,7 +92,8 @@ Default Data Readers
 ===============
 
     user=> default-data-readers
-    {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
+    {inst #'clojure.instant/read-instant-date, 
+	 uuid #'clojure.uuid/default-uuid-reader}
 
 !
 
@@ -127,6 +128,8 @@ Counter examples:
 * singletons not 
 
 Worth digging into the reader internals and proposing a solution.
+
+!
 
 This Presentation on Github
 ===================
