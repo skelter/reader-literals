@@ -20,8 +20,9 @@
   "Save a list of nasfiles to a text file."
   [nasfiles outputfile]
   (binding [*out* (java.io.FileWriter. outputfile)]
-    (for [nf nasfiles]
-      (pprint nf *out*))))
+    (doall
+     (for [nf nasfiles]
+      (prn nf)))))
 
 (defn load-nasfiles
   "Load a list of nasfiles from a text file."
