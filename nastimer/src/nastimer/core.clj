@@ -25,10 +25,10 @@
       (prn nf)))))
 
 (defn load-nasfiles
-  "Load a list of nasfiles from a text file."
+  "Load a list of nasfiles from a text file. Not Lazy, reads them all"
   [inputfilename]
-  (binding [*in* (java.io.PushbackReader. (java.io.FileReader. inputfilename))]
-    (read)))
+  (with-open [r (java.io.PushbackReader. (java.io.FileReader. inputfilename))]
+    (doall (take-while identity (repeatedly (fn [] (read r false nil)))))))
 
        
 (defn scan
