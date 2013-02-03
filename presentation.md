@@ -49,10 +49,11 @@ Reader Literals (cont'd)
     #foo/bar [1 2 3]
     #nascan/file "archives/2012/myblog.zip"
     #nascan/file { :path "archives/2012/myblog.zip"  
-                           :size 12345678
-                           :scantime  223048}
-    #nas.File {...} ;; note no slash! while a reader literal, 
-                         ;; used by Clojure for objects and classes.
+                    :size 12345678
+                    :scantime  223048}
+    #nas.File {...} ;; note no slash! 
+	           ;;while a reader literal, 
+               ;; used by Clojure for objects and classes.
 
 
 !
