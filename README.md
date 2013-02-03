@@ -30,7 +30,7 @@ Reader Literals
 ```
 
 * magic sequence that the reader will map to a function and invoke
-  * namespaced
+  * namespaced with slash
   * root space reserved for Clojure
 * reader will pass next form to that function
 * allows extension of reader without allowing change of the language
