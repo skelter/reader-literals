@@ -34,6 +34,7 @@ Reader Literals
 ==========
 
 ```clojure
+
    #foo/bar form
    #foo/bar [1 2 3]
 ```
@@ -49,13 +50,19 @@ Reader Literals (cont'd)
 --------------------
 
 ```clojure
+
    #foo/bar [1 2 3]
    
    #nascan/file "archives/2012/myblog.zip"
+   
    #nascan/file { :path "archives/2012/myblog.zip" 
+   
                           :size 12345678
+						  
                           :scantime  223048}
+						  
    #nas.File {...} ;; note no slash! while a reader literal, 
+   
                         ;; used by Clojure for objects and classes.
 ```
 
@@ -133,9 +140,9 @@ Worth digging into the reader internals and proposing a solution.
 
 This Presentation on Github
 ===================
-```
-origin	git@github.com:skelter/reader-literals.git (fetch)
-```
+
+* origin	git@github.com:skelter/reader-literals.git (fetch)
+* slides    http://skelter.github.com/reader-literals/Presenter.html
 
 !
 
