@@ -24,9 +24,9 @@ which also gives us
 Reader Literals
 ==========
 
-```
-#foo/bar form
-#foo/bar [1 2 3]
+```clojure
+    #foo/bar form
+    #foo/bar [1 2 3]
 ```
 
 * magic sequence that the reader will map to a function and invoke
@@ -41,14 +41,14 @@ Reader Literals
 Reader Literals (cont'd)
 --------------------
 
-```
-#foo/bar [1 2 3]
-
-#nascan/file "archives/2012/myblog.zip"
-#nascan/file { :path "archives/2012/myblog.zip" 
+```clojure
+    #foo/bar [1 2 3]
+    
+    #nascan/file "archives/2012/myblog.zip"
+    #nascan/file { :path "archives/2012/myblog.zip" 
                        :size 12345678
                        :scantime  223048}
-#nas.File {...} ;; note no slash! while a reader literal, 
+    #nas.File {...} ;; note no slash! while a reader literal, 
                      ;; used by Clojure for objects and classes.
 ```
 
@@ -87,8 +87,11 @@ parts, it would look like EDN.
 
 Default Data Readers
 ===============
-   user=> default-data-readers
-   {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
+```clojure
+    user=> default-data-readers
+    {inst #'clojure.instant/read-instant-date, 
+	 uuid #'clojure.uuid/default-uuid-reader}
+```
 
 !
 
@@ -126,9 +129,9 @@ Worth digging into the reader internals and proposing a solution.
 
 This Presentation on Github
 ===================
-```
-origin	git@github.com:skelter/reader-literals.git (fetch)
-```
+
+*  origin	git@github.com:skelter/reader-literals.git (fetch)
+*  Slides http://skelter.github.com/reader-literals/Presenter.html
 
 !
 
