@@ -9,7 +9,6 @@ Monday, February 4th, 2013
 
 Presenter: Steve Suehs, Principal Engineer, Datical  
 
-!
 
 The Reader
 ========
@@ -19,7 +18,6 @@ which also gives us
 
 * Parses stream -> Code
 
-!
 
 Reader Literals
 ==========
@@ -36,7 +34,7 @@ Reader Literals
 * allows extension of reader without allowing change of the language
    * contrasts with other LISP's reader extensions, which could change semantics
 
-! 
+
 
 Reader Literals (cont'd)
 --------------------
@@ -53,7 +51,6 @@ Reader Literals (cont'd)
 ```
 
 
-!
 
 Why?
 ====
@@ -69,7 +66,6 @@ reader will call with the next form.
 
 The date-time instance is a good example of both.
 
-!
 
 Reader Literals has roots in EDN
 ======================
@@ -83,7 +79,6 @@ or maybe the other way around.
 If you took the programming out of Clojure and just left the data
 parts, it would look like EDN.
 
-!
 
 Default Data Readers
 ===============
@@ -93,14 +88,12 @@ Default Data Readers
 	 uuid #'clojure.uuid/default-uuid-reader}
 ```
 
-!
 
 Let us Code
 =========
 
 Fire up a repl and play.
 
-!
 
 nastimer example
 ---------------
@@ -110,7 +103,6 @@ so I played around with literals.
 * If the data_readers.clj exists, it must have at least an empty map,
   or reader will fail, and repl may not start.
 
-!
 
 Possible Pitfalls
 ===========
@@ -133,7 +125,7 @@ This Presentation on Github
 *  origin	git@github.com:skelter/reader-literals.git (fetch)
 *  Slides http://skelter.github.com/reader-literals/Presenter.html
 
-!
+
 
 Research Links
 ==========
@@ -150,7 +142,7 @@ Research Links
 * Malcom Sparks example
    http://blog.malcolmsparks.com/?p=67
 
-!
+
 
 Presentation Tools
 =============
