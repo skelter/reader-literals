@@ -3,11 +3,11 @@ Discussion of Reader Literals in Clojure
 
 Austin Clojure Meetup
 
-Monday, February 4th, 2013
-
 Hosted by Capital Factory
 
-Presenter: Steve Suehs  
+Monday, February 4th, 2013
+
+Presenter: Steve Suehs, Principal Engineer, Datical  
 
 !
 
@@ -39,6 +39,8 @@ Reader Literals
 * allows extension of reader without allowing change of the language
    * contrasts with other LISP's reader extensions, which could change semantics
 
+!
+
 Why?
 ====
 S expressions are so powerful, why not use functions?
@@ -53,6 +55,8 @@ reader will will call with the next form.
 
 The date-time instance is a good example of both.
 
+!
+
 Reader Literals has roots in EDN
 ======================
 or maybe the other way around.
@@ -65,26 +69,36 @@ or maybe the other way around.
 If you took the programming out of Clojure and just left the data
 parts, it would look like EDN.
 
+!
+
 Default Data Readers
 ===============
    user=> default-data-readers
    {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
+
+!
 
 Let us Code
 =========
 
 Fire up a repl and play.
 
+!
+
 nastimer example
 ---------------
 I was having a problem with a disk usage program and my home NAS
 so I played around with literals
+
+!
 
 This Presentation on Github
 ===================
 ```
 origin	git@github.com:skelter/reader-literals.git (fetch)
 ```
+
+!
 
 Research Links
 ==========
@@ -98,9 +112,10 @@ Research Links
    * http://rwmj.wordpress.com/2009/10/30/xml-or-s-expressions/
    * http://blog.fandle.com/2010/02/using-s-expressions-instead-of-xml.html
    * http://www.paulgraham.com/diff.html
-   * 
+* Malcom Sparks example
+   http://blog.malcolmsparks.com/?p=67
 
-
+!
 
 Presentation Tools
 =============
