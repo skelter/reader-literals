@@ -30,6 +30,8 @@ Reader Literals
    #nascan/file { :path "archives/2012/myblog.zip" 
                           :size 12345678
                           :scantime  223048}
+   #nas.File {...} ;; note no slash! while a reader literal, 
+                        ;; used by Clojure for objects and classes.
 ```
 
 * magic sequence that the reader will map to a function and invoke
@@ -88,7 +90,10 @@ Fire up a repl and play.
 nastimer example
 ---------------
 I was having a problem with a disk usage program and my home NAS
-so I played around with literals
+so I played around with literals.
+
+* If the data_readers.clj exists, it must have at least an empty map,
+  or reader will fail, and repl may not start.
 
 !
 
