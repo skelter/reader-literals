@@ -1,4 +1,4 @@
-Discussion of Reader Literals in Clojure
+Reader Literals in Clojure
 =========================
 
 Austin Clojure Meetup
@@ -22,35 +22,38 @@ which also gives us
 !
 
 Reader Literals
+===========
+
+* allows extension of reader without allowing change of the language
+* contrasts with other LISP's reader extensions, which could change semantics
+
+!
+
+
+Reader Literals
 ==========
 
-```
-#foo/bar form
-#foo/bar [1 2 3]
-```
+    #foo/bar form
+    #foo/bar [1 2 3]
 
 * magic sequence that the reader will map to a function and invoke
   * namespaced with slash
   * root space reserved for Clojure
 * reader will pass next form to that function
-* allows extension of reader without allowing change of the language
-   * contrasts with other LISP's reader extensions, which could change semantics
 
-! 
+!
 
 Reader Literals (cont'd)
 --------------------
 
-```
-#foo/bar [1 2 3]
-
-#nascan/file "archives/2012/myblog.zip"
-#nascan/file { :path "archives/2012/myblog.zip" 
-                       :size 12345678
-                       :scantime  223048}
-#nas.File {...} ;; note no slash! while a reader literal, 
-                     ;; used by Clojure for objects and classes.
-```
+    #foo/bar [1 2 3]
+    #nascan/file "archives/2012/myblog.zip"
+    #nascan/file { :path "archives/2012/myblog.zip"  
+                    :size 12345678
+                    :scantime  223048}
+    #nas.File {...} ;; note no slash! 
+	           ;;while a reader literal, 
+               ;; used by Clojure for objects and classes.
 
 
 !
@@ -65,7 +68,7 @@ we can use it to operate with other systems or map to other
 implementations in a different context. 
 
 The reader literals also mean we can change the function that the
-reader will will call with the next form.
+reader will call with the next form.
 
 The date-time instance is a good example of both.
 
@@ -87,8 +90,10 @@ parts, it would look like EDN.
 
 Default Data Readers
 ===============
-   user=> default-data-readers
-   {inst #'clojure.instant/read-instant-date, uuid #'clojure.uuid/default-uuid-reader}
+
+    user=> default-data-readers
+    {inst #'clojure.instant/read-instant-date, 
+	 uuid #'clojure.uuid/default-uuid-reader}
 
 !
 
@@ -124,11 +129,13 @@ Counter examples:
 
 Worth digging into the reader internals and proposing a solution.
 
+!
+
 This Presentation on Github
 ===================
-```
-origin	git@github.com:skelter/reader-literals.git (fetch)
-```
+
+* origin	git@github.com:skelter/reader-literals.git (fetch)
+* slides    http://skelter.github.com/reader-literals/Presenter.html
 
 !
 
