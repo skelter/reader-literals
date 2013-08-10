@@ -1,19 +1,23 @@
 (ns nastimer.core)
 
-(defrecord NasFile [path size moddate])
+(defrecord NasFile [path isDir size moddate scanduration])
 
 (defn directory? [file]
   (.isDirectory file))
 
-(defn normal? [file]
+(defn normal? [^java.io.File file]
   (not (.isDirectory file)))
 
-(defn nasfile [file]
-     (NasFile. (.getPath file) (.length file) (java.util.Date. (.lastModified file))))
+(defn nasfile [^java.io.File file]
+     (let [begin (java.util.Date.)
+           ourNasFile (NasFile. (.getPath file) (normal? file) (.length file) (java.util.Date. (.lastModified file)) nil)
+	   end (java.util.Date.)
+	   duration (- (.getTime end) (.getTime begin))]
+       (assoc ourNasFile :scanduration duration)))
 
 (defn build-nasfiles
   "Return a sequence of NasFiles from a given directory, expecting a java.io.File ."
-  [filedir]
+  [^java.io.File filedir]
   (map nasfile (filter normal? (.listFiles filedir))))
 
 (defn save-nasfiles
@@ -37,11 +41,12 @@
     (doall
      (for [nf nasfiles]
        (do (print "#nasfile/file")
-	   (prn { :path (:path nf) :size  (:size nf) :moddate (:moddate nf) }) )))))
+	   (prn { :path (:path nf) :isDir (:isDir nf) :size  (:size nf) :moddate (:moddate nf) :scanduration (:scanduration nf) }) )))))
 
        
 (defn scan
   "Returns a sequence of NasFiles as read from rootToScan."
   [rootToScan]
   (let [root (java.io.File. rootToScan)]
-    (conj (buid-nasfiles root) (map build-nasfiles (subfolders root)))
+    (map nasfile (file-seq root))))
+
